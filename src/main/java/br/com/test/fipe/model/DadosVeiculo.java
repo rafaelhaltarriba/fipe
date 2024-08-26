@@ -1,7 +1,8 @@
 package br.com.test.fipe.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public record DadosVeiculo(@JsonAlias("codigo") String codigo,
-                           @JsonAlias("nome") String nome) {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosVeiculo(String codigo,
+                           String nome) {
 }
